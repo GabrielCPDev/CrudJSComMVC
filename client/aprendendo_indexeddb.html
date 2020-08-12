@@ -9,6 +9,7 @@
 
 <body>
     <script src="js/app/models/Negociacao.js"></script>
+    <script src="js/app/services/ConnectionFactory.js"></script>
 
     <script>
         var connection;
@@ -88,6 +89,16 @@
                 console.log('Error:' + e.target.error.name);
             };
         }
+
+        ConnectionFactory
+            .getConnection()
+            .then(connection => {});
+
+        // faz outras coisas e pede novamente a conexão
+
+        ConnectionFactory
+            .getConnection()
+            .then(connection => {});
     </script>
 </body>
 
